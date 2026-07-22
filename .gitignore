@@ -2,10 +2,12 @@
 *.zip
 iPad用_公開フォルダ/
 移行用_最小セット/
-M_PLUS_Rounded_1c/
+/M_PLUS_Rounded_1c/
 *.csv
 *.png
 !images/**/*.png
 !images/*.png
+!assets/**/*.png
+!assets/*.png
 注文*.csv
 商品別*.csv

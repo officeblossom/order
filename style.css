@@ -233,7 +233,7 @@ h3 {
 .home-photo {
   min-height: 420px;
   border-radius: 12px;
-  background: url("images/hero-rose.jpg") center / cover no-repeat, #f2ece4;
+  background: url("assets/img/hero.jpg") center / cover no-repeat, #f2ece4;
   box-shadow: var(--shadow);
 }
 

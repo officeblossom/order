@@ -10,7 +10,7 @@ const customerFields = [
   { id: "phone", label: "電話番号", required: true, placeholder: "例：090-1234-5678" }
 ];
 
-const LINE_QR_IMAGE = "images/LINE.JPG";
+const LINE_QR_IMAGE = "assets/img/img001.jpg";
 
 const categories = [
   { id: "data-book", name: "データ・フォトブック", description: "データCDや冊子、フォトブック" },
@@ -22,9 +22,9 @@ const categories = [
 ];
 
 const products = [
-  { id: "data-cd", categoryId: "data-book", name: "データCD", price: 12000, image: "images/product-photo-book.svg", description: "撮影データをCDでお渡しします。", options: [] },
-  { id: "express-data-cd", categoryId: "data-book", name: "超特急データCD", price: 17000, image: "images/product-photo-book.svg", description: "お急ぎ仕上げのデータCDです。", options: [] },
-  { id: "original-booklet", categoryId: "data-book", name: "オリジナル冊子", price: 16000, image: "images/product-photo-book.svg", description: "追加オプションを選べる冊子商品です。", options: [
+  { id: "data-cd", categoryId: "data-book", name: "データCD", price: 12000, image: "assets/img/img002.svg", description: "撮影データをCDでお渡しします。", options: [] },
+  { id: "express-data-cd", categoryId: "data-book", name: "超特急データCD", price: 17000, image: "assets/img/img002.svg", description: "お急ぎ仕上げのデータCDです。", options: [] },
+  { id: "original-booklet", categoryId: "data-book", name: "オリジナル冊子", price: 16000, image: "assets/img/img002.svg", description: "追加オプションを選べる冊子商品です。", options: [
     { id: "addons", label: "追加オプション", type: "addons", values: [
       { label: "5冊追加", price: 3000 },
       { label: "2ページ追加", price: 3000 },
@@ -32,163 +32,163 @@ const products = [
       { label: "イラスト追加", price: 8000 }
     ] }
   ] },
-  { id: "photo-book-main", categoryId: "data-book", name: "フォトブック", price: 30000, image: "images/product-photo-book.svg", description: "思い出をしっかり残せるフォトブックです。", options: [] },
+  { id: "photo-book-main", categoryId: "data-book", name: "フォトブック", price: 30000, image: "assets/img/img002.svg", description: "思い出をしっかり残せるフォトブックです。", options: [] },
 
-  { id: "canvas-board", categoryId: "display", name: "キャンバスボード", price: 9000, image: "images/product-canvas.svg", description: "飾りやすいキャンバスボードです。", options: [
+  { id: "canvas-board", categoryId: "display", name: "キャンバスボード", price: 9000, image: "assets/img/img003.svg", description: "飾りやすいキャンバスボードです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ", "Mサイズ", "Lサイズ", "LLサイズ"] }
   ], optionPrices: { size: { "Sサイズ": 9000, "Mサイズ": 14000, "Lサイズ": 22000, "LLサイズ": 28000 } } },
-  { id: "acrylic-stand", categoryId: "display", name: "アクリルスタンド", price: 10000, image: "images/product-acrylic-m.svg", description: "立てて飾れるアクリルグッズです。", options: [] },
-  { id: "tapestry", categoryId: "display", name: "タペストリー", price: 17000, image: "images/product-photo-panel.svg", description: "壁に飾れる大きめグッズです。", options: [
+  { id: "acrylic-stand", categoryId: "display", name: "アクリルスタンド", price: 10000, image: "assets/img/img004.svg", description: "立てて飾れるアクリルグッズです。", options: [] },
+  { id: "tapestry", categoryId: "display", name: "タペストリー", price: 17000, image: "assets/img/img005.svg", description: "壁に飾れる大きめグッズです。", options: [
     { id: "size", label: "サイズ", values: ["Mサイズ", "Lサイズ"] }
   ], optionPrices: { size: { "Mサイズ": 17000, "Lサイズ": 32000 } } },
-  { id: "square-mount", categoryId: "display", name: "スクウェア台紙", price: 6000, image: "images/product-photo-panel.svg", description: "写真をきれいに残せる台紙です。", options: [] },
-  { id: "multi-frame", categoryId: "display", name: "多面額縁", price: 9000, image: "images/product-photo-panel.svg", description: "複数カットを飾れる額縁です。", options: [
+  { id: "square-mount", categoryId: "display", name: "スクウェア台紙", price: 6000, image: "assets/img/img005.svg", description: "写真をきれいに残せる台紙です。", options: [] },
+  { id: "multi-frame", categoryId: "display", name: "多面額縁", price: 9000, image: "assets/img/img005.svg", description: "複数カットを飾れる額縁です。", options: [
     { id: "size", label: "サイズ", values: ["A4サイズ", "A3サイズ"] }
   ], optionPrices: { size: { "A4サイズ": 9000, "A3サイズ": 15000 } } },
-  { id: "acrylic-clock", categoryId: "display", name: "アクリル時計", price: 24000, image: "images/product-acrylic-m.svg", description: "写真入りのアクリル時計です。", options: [] },
-  { id: "cushion-display", categoryId: "display", name: "クッション", price: 11000, image: "images/product-canvas.svg", description: "複数カテゴリーに掲載されるクッションです。", options: [
+  { id: "acrylic-clock", categoryId: "display", name: "アクリル時計", price: 24000, image: "assets/img/img004.svg", description: "写真入りのアクリル時計です。", options: [] },
+  { id: "cushion-display", categoryId: "display", name: "クッション", price: 11000, image: "assets/img/img003.svg", description: "複数カテゴリーに掲載されるクッションです。", options: [
     { id: "type", label: "タイプ", values: ["小サイズ片面タイプ", "小サイズ両面タイプ", "大サイズ片面タイプ", "大サイズ両面タイプ"] }
   ], optionPrices: { type: { "小サイズ片面タイプ": 11000, "小サイズ両面タイプ": 13000, "大サイズ片面タイプ": 20000, "大サイズ両面タイプ": 24000 } } },
-  { id: "blanket-display", categoryId: "display", name: "ブランケット", price: 13000, image: "images/product-canvas.svg", description: "複数カテゴリーに掲載されるブランケットです。", options: [
+  { id: "blanket-display", categoryId: "display", name: "ブランケット", price: 13000, image: "assets/img/img003.svg", description: "複数カテゴリーに掲載されるブランケットです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ", "Lサイズ"] }
   ], optionPrices: { size: { "Sサイズ": 13000, "Lサイズ": 22000 } } },
-  { id: "jigsaw-display", categoryId: "display", name: "ジグソーパズル", price: 6000, image: "images/product-photo-panel.svg", description: "飾って楽しめるジグソーパズルです。", options: [
+  { id: "jigsaw-display", categoryId: "display", name: "ジグソーパズル", price: 6000, image: "assets/img/img005.svg", description: "飾って楽しめるジグソーパズルです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ(縁なし)", "Mサイズ(縁あり)"] }
   ], optionPrices: { size: { "Sサイズ(縁なし)": 6000, "Mサイズ(縁あり)": 12000 } } },
 
-  { id: "tote-bag", categoryId: "bags", name: "トートバッグ", price: 8500, image: "images/product-keyholder.svg", description: "日常使いしやすいトートバッグです。", options: [
+  { id: "tote-bag", categoryId: "bags", name: "トートバッグ", price: 8500, image: "assets/img/img006.svg", description: "日常使いしやすいトートバッグです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ", "Lサイズ"] }
   ], optionPrices: { size: { "Sサイズ": 8500, "Lサイズ": 9000 } } },
-  { id: "mini-shoulder-bag", categoryId: "bags", name: "ミニショルダーバッグ", price: 10000, image: "images/product-keyholder.svg", description: "持ち歩きやすいミニショルダーバッグです。", options: [] },
-  { id: "sacoche", categoryId: "bags", name: "サコッシュ", price: 7500, image: "images/product-keyholder.svg", description: "軽くて使いやすいサコッシュです。", options: [] },
-  { id: "slim-pouch", categoryId: "bags", name: "スリムポーチ", price: 4500, image: "images/product-keyholder.svg", description: "小物入れに便利なポーチです。", options: [] },
-  { id: "suitcase", categoryId: "bags", name: "スーツケース", price: 63000, image: "images/product-keyholder.svg", description: "存在感のあるオリジナルスーツケースです。", options: [] },
+  { id: "mini-shoulder-bag", categoryId: "bags", name: "ミニショルダーバッグ", price: 10000, image: "assets/img/img006.svg", description: "持ち歩きやすいミニショルダーバッグです。", options: [] },
+  { id: "sacoche", categoryId: "bags", name: "サコッシュ", price: 7500, image: "assets/img/img006.svg", description: "軽くて使いやすいサコッシュです。", options: [] },
+  { id: "slim-pouch", categoryId: "bags", name: "スリムポーチ", price: 4500, image: "assets/img/img006.svg", description: "小物入れに便利なポーチです。", options: [] },
+  { id: "suitcase", categoryId: "bags", name: "スーツケース", price: 63000, image: "assets/img/img006.svg", description: "存在感のあるオリジナルスーツケースです。", options: [] },
 
-  { id: "wallet-phone-case", categoryId: "daily-goods", name: "手帳型スマホケース", price: 9000, image: "images/product-acrylic-s.svg", description: "手帳型のスマホケースです。", options: [] },
-  { id: "normal-phone-case", categoryId: "daily-goods", name: "ノーマルスマホケース", price: 7500, image: "images/product-acrylic-s.svg", description: "シンプルなスマホケースです。", options: [] },
-  { id: "ipad-case", categoryId: "daily-goods", name: "iPadケース", price: 10000, image: "images/product-acrylic-s.svg", description: "iPad用ケースです。", options: [] },
-  { id: "coin-case", categoryId: "daily-goods", name: "コインケース", price: 8500, image: "images/product-keyholder.svg", description: "小物収納に便利なコインケースです。", options: [] },
-  { id: "pass-case", categoryId: "daily-goods", name: "パスケース", price: 6500, image: "images/product-keyholder.svg", description: "通勤通学にも使えるパスケースです。", options: [] },
-  { id: "mobile-battery", categoryId: "daily-goods", name: "モバイルバッテリー", price: 11000, image: "images/product-keyholder.svg", description: "写真入りモバイルバッテリーです。", options: [] },
-  { id: "cushion-goods", categoryId: "daily-goods", name: "クッション", price: 11000, image: "images/product-canvas.svg", description: "複数カテゴリーに掲載されるクッションです。", options: [
+  { id: "wallet-phone-case", categoryId: "daily-goods", name: "手帳型スマホケース", price: 9000, image: "assets/img/img007.svg", description: "手帳型のスマホケースです。", options: [] },
+  { id: "normal-phone-case", categoryId: "daily-goods", name: "ノーマルスマホケース", price: 7500, image: "assets/img/img007.svg", description: "シンプルなスマホケースです。", options: [] },
+  { id: "ipad-case", categoryId: "daily-goods", name: "iPadケース", price: 10000, image: "assets/img/img007.svg", description: "iPad用ケースです。", options: [] },
+  { id: "coin-case", categoryId: "daily-goods", name: "コインケース", price: 8500, image: "assets/img/img006.svg", description: "小物収納に便利なコインケースです。", options: [] },
+  { id: "pass-case", categoryId: "daily-goods", name: "パスケース", price: 6500, image: "assets/img/img006.svg", description: "通勤通学にも使えるパスケースです。", options: [] },
+  { id: "mobile-battery", categoryId: "daily-goods", name: "モバイルバッテリー", price: 11000, image: "assets/img/img006.svg", description: "写真入りモバイルバッテリーです。", options: [] },
+  { id: "cushion-goods", categoryId: "daily-goods", name: "クッション", price: 11000, image: "assets/img/img003.svg", description: "複数カテゴリーに掲載されるクッションです。", options: [
     { id: "type", label: "タイプ", values: ["小サイズ片面タイプ", "小サイズ両面タイプ", "大サイズ片面タイプ", "大サイズ両面タイプ"] }
   ], optionPrices: { type: { "小サイズ片面タイプ": 11000, "小サイズ両面タイプ": 13000, "大サイズ片面タイプ": 20000, "大サイズ両面タイプ": 24000 } } },
-  { id: "blanket-goods", categoryId: "daily-goods", name: "ブランケット", price: 13000, image: "images/product-canvas.svg", description: "複数カテゴリーに掲載されるブランケットです。", options: [
+  { id: "blanket-goods", categoryId: "daily-goods", name: "ブランケット", price: 13000, image: "assets/img/img003.svg", description: "複数カテゴリーに掲載されるブランケットです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ", "Lサイズ"] }
   ], optionPrices: { size: { "Sサイズ": 13000, "Lサイズ": 22000 } } },
-  { id: "jigsaw-goods", categoryId: "daily-goods", name: "ジグソーパズル", price: 6000, image: "images/product-photo-panel.svg", description: "複数カテゴリーに掲載されるジグソーパズルです。", options: [
+  { id: "jigsaw-goods", categoryId: "daily-goods", name: "ジグソーパズル", price: 6000, image: "assets/img/img005.svg", description: "複数カテゴリーに掲載されるジグソーパズルです。", options: [
     { id: "size", label: "サイズ", values: ["Sサイズ", "Mサイズ"] }
   ], optionPrices: { size: { "Sサイズ": 6000, "Mサイズ": 12000 } } },
-  { id: "print-seal", categoryId: "daily-goods", name: "プリントシール", price: 2000, image: "images/product-keyholder.svg", description: "分割タイプを選べるプリントシールです。", options: [
+  { id: "print-seal", categoryId: "daily-goods", name: "プリントシール", price: 2000, image: "assets/img/img006.svg", description: "分割タイプを選べるプリントシールです。", options: [
     { id: "split", label: "分割", values: ["2分割", "4分割", "8分割", "16分割"] }
   ] },
-  { id: "can-badge", categoryId: "daily-goods", name: "缶バッジ", price: 2500, image: "images/product-keyholder.svg", description: "タイプを選べる缶バッジです。", options: [
+  { id: "can-badge", categoryId: "daily-goods", name: "缶バッジ", price: 2500, image: "assets/img/img006.svg", description: "タイプを選べる缶バッジです。", options: [
     { id: "type", label: "タイプ", values: ["ピンタイプ", "マグネットタイプ"] }
   ] },
-  { id: "compact-mirror", categoryId: "daily-goods", name: "コンパクトミラー", price: 3500, image: "images/product-keyholder.svg", description: "持ち歩きやすいコンパクトミラーです。", options: [] },
-  { id: "stand-mirror", categoryId: "daily-goods", name: "スタンドミラー", price: 7500, image: "images/product-keyholder.svg", description: "飾って使えるスタンドミラーです。", options: [] },
-  { id: "mug", categoryId: "daily-goods", name: "マグカップ", price: 5500, image: "images/product-keyholder.svg", description: "写真入りマグカップです。", options: [] },
-  { id: "glass", categoryId: "daily-goods", name: "グラス", price: 6000, image: "images/product-keyholder.svg", description: "写真入りグラスです。", options: [] },
-  { id: "diatomite-coaster", categoryId: "daily-goods", name: "珪藻土コースター", price: 4500, image: "images/product-keyholder.svg", description: "吸水性のあるコースターです。", options: [] },
-  { id: "mouse-pad", categoryId: "daily-goods", name: "マウスパッド", price: 6000, image: "images/product-keyholder.svg", description: "デスクで使えるマウスパッドです。", options: [] },
-  { id: "can", categoryId: "daily-goods", name: "缶", price: 6500, image: "images/product-keyholder.svg", description: "小物入れにも使える缶です。", options: [] },
+  { id: "compact-mirror", categoryId: "daily-goods", name: "コンパクトミラー", price: 3500, image: "assets/img/img006.svg", description: "持ち歩きやすいコンパクトミラーです。", options: [] },
+  { id: "stand-mirror", categoryId: "daily-goods", name: "スタンドミラー", price: 7500, image: "assets/img/img006.svg", description: "飾って使えるスタンドミラーです。", options: [] },
+  { id: "mug", categoryId: "daily-goods", name: "マグカップ", price: 5500, image: "assets/img/img006.svg", description: "写真入りマグカップです。", options: [] },
+  { id: "glass", categoryId: "daily-goods", name: "グラス", price: 6000, image: "assets/img/img006.svg", description: "写真入りグラスです。", options: [] },
+  { id: "diatomite-coaster", categoryId: "daily-goods", name: "珪藻土コースター", price: 4500, image: "assets/img/img006.svg", description: "吸水性のあるコースターです。", options: [] },
+  { id: "mouse-pad", categoryId: "daily-goods", name: "マウスパッド", price: 6000, image: "assets/img/img006.svg", description: "デスクで使えるマウスパッドです。", options: [] },
+  { id: "can", categoryId: "daily-goods", name: "缶", price: 6500, image: "assets/img/img006.svg", description: "小物入れにも使える缶です。", options: [] },
 
-  { id: "line-fixed-a", categoryId: "line-stamp", name: "言葉固定Aタイプ", price: 5500, image: "images/product-photo-book.svg", description: "言葉固定のLINEスタンプAタイプです。", options: [] },
-  { id: "line-fixed-b", categoryId: "line-stamp", name: "言葉固定Bタイプ", price: 5500, image: "images/product-photo-book.svg", description: "言葉固定のLINEスタンプBタイプです。", options: [] },
-  { id: "line-choice", categoryId: "line-stamp", name: "言葉選択タイプ", price: 6500, image: "images/product-photo-book.svg", description: "言葉を選べるLINEスタンプです。", options: [] },
-  { id: "line-comic-fixed", categoryId: "line-stamp", name: "アメコミ風言葉固定タイプ", price: 7000, image: "images/product-photo-book.svg", description: "アメコミ風の言葉固定タイプです。", options: [] },
-  { id: "line-comic-choice", categoryId: "line-stamp", name: "アメコミ風言葉選択タイプ", price: 8000, image: "images/product-photo-book.svg", description: "アメコミ風の言葉選択タイプです。", options: [] },
+  { id: "line-fixed-a", categoryId: "line-stamp", name: "言葉固定Aタイプ", price: 5500, image: "assets/img/img002.svg", description: "言葉固定のLINEスタンプAタイプです。", options: [] },
+  { id: "line-fixed-b", categoryId: "line-stamp", name: "言葉固定Bタイプ", price: 5500, image: "assets/img/img002.svg", description: "言葉固定のLINEスタンプBタイプです。", options: [] },
+  { id: "line-choice", categoryId: "line-stamp", name: "言葉選択タイプ", price: 6500, image: "assets/img/img002.svg", description: "言葉を選べるLINEスタンプです。", options: [] },
+  { id: "line-comic-fixed", categoryId: "line-stamp", name: "アメコミ風言葉固定タイプ", price: 7000, image: "assets/img/img002.svg", description: "アメコミ風の言葉固定タイプです。", options: [] },
+  { id: "line-comic-choice", categoryId: "line-stamp", name: "アメコミ風言葉選択タイプ", price: 8000, image: "assets/img/img002.svg", description: "アメコミ風の言葉選択タイプです。", options: [] },
 
-  { id: "fd-normal-phone-case", categoryId: "face-dots", name: "ノーマルスマホケース(FD)", price: 9000, image: "images/product-acrylic-s.svg", description: "Face Dotsデザインのスマホケースです。", options: faceDotsOptions() },
-  { id: "fd-wallet-phone-case", categoryId: "face-dots", name: "手帳型スマホケース(FD)", price: 10500, image: "images/product-acrylic-s.svg", description: "Face Dotsデザインの手帳型スマホケースです。", options: faceDotsOptions() },
-  { id: "fd-ipad-case", categoryId: "face-dots", name: "iPadケース(FD)", price: 11500, image: "images/product-acrylic-s.svg", description: "Face DotsデザインのiPadケースです。", options: faceDotsOptions() },
-  { id: "fd-coin-case", categoryId: "face-dots", name: "コインケース(FD)", price: 10000, image: "images/product-keyholder.svg", description: "Face Dotsデザインのコインケースです。", options: faceDotsOptions() },
-  { id: "fd-pass-case", categoryId: "face-dots", name: "パスケース(FD)", price: 8000, image: "images/product-keyholder.svg", description: "Face Dotsデザインのパスケースです。", options: faceDotsOptions() },
-  { id: "fd-mobile-battery", categoryId: "face-dots", name: "モバイルバッテリー(FD)", price: 12500, image: "images/product-keyholder.svg", description: "Face Dotsデザインのモバイルバッテリーです。", options: faceDotsOptions() },
-  { id: "fd-compact-mirror", categoryId: "face-dots", name: "コンパクトミラー(FD)", price: 5000, image: "images/product-keyholder.svg", description: "Face Dotsデザインのコンパクトミラーです。", options: faceDotsOptions() },
-  { id: "fd-stand-mirror", categoryId: "face-dots", name: "スタンドミラー(FD)", price: 9000, image: "images/product-keyholder.svg", description: "Face Dotsデザインのスタンドミラーです。", options: faceDotsOptions() }
+  { id: "fd-normal-phone-case", categoryId: "face-dots", name: "ノーマルスマホケース(FD)", price: 9000, image: "assets/img/img007.svg", description: "Face Dotsデザインのスマホケースです。", options: faceDotsOptions() },
+  { id: "fd-wallet-phone-case", categoryId: "face-dots", name: "手帳型スマホケース(FD)", price: 10500, image: "assets/img/img007.svg", description: "Face Dotsデザインの手帳型スマホケースです。", options: faceDotsOptions() },
+  { id: "fd-ipad-case", categoryId: "face-dots", name: "iPadケース(FD)", price: 11500, image: "assets/img/img007.svg", description: "Face DotsデザインのiPadケースです。", options: faceDotsOptions() },
+  { id: "fd-coin-case", categoryId: "face-dots", name: "コインケース(FD)", price: 10000, image: "assets/img/img006.svg", description: "Face Dotsデザインのコインケースです。", options: faceDotsOptions() },
+  { id: "fd-pass-case", categoryId: "face-dots", name: "パスケース(FD)", price: 8000, image: "assets/img/img006.svg", description: "Face Dotsデザインのパスケースです。", options: faceDotsOptions() },
+  { id: "fd-mobile-battery", categoryId: "face-dots", name: "モバイルバッテリー(FD)", price: 12500, image: "assets/img/img006.svg", description: "Face Dotsデザインのモバイルバッテリーです。", options: faceDotsOptions() },
+  { id: "fd-compact-mirror", categoryId: "face-dots", name: "コンパクトミラー(FD)", price: 5000, image: "assets/img/img006.svg", description: "Face Dotsデザインのコンパクトミラーです。", options: faceDotsOptions() },
+  { id: "fd-stand-mirror", categoryId: "face-dots", name: "スタンドミラー(FD)", price: 9000, image: "assets/img/img006.svg", description: "Face Dotsデザインのスタンドミラーです。", options: faceDotsOptions() }
 ];
 
 const productImages = {
-  "data-cd": "images/端末用フォトグッズ写真/①データ、フォトブック/1.データCD、2.超特急.jpg",
-  "express-data-cd": "images/端末用フォトグッズ写真/①データ、フォトブック/1.データCD、2.超特急.jpg",
-  "original-booklet": "images/端末用フォトグッズ写真/①データ、フォトブック/3.オリジナル冊子.jpg",
-  "photo-book-main": "images/端末用フォトグッズ写真/①データ、フォトブック/4.フォトブック.jpg",
-  "canvas-board": "images/端末用フォトグッズ写真/②飾れる/1.キャンバス.jpg",
-  "acrylic-stand": "images/2026:6:19写真追加分/②飾れるグッズ/2.アクリルスタンド.jpg",
-  "tapestry": "images/端末用フォトグッズ写真/②飾れる/3.タペストリー.png",
-  "square-mount": "images/端末用フォトグッズ写真/②飾れる/4.スクウェア台紙.jpg",
-  "multi-frame": "images/端末用フォトグッズ写真/②飾れる/5.多面額縁A4.jpg",
-  "acrylic-clock": "images/2026:6:19写真追加分/②飾れるグッズ/6.アクリル時計.jpg",
-  "cushion-display": "images/端末用フォトグッズ写真/④使える（小物類）/7.クッション.jpg",
-  "blanket-display": "images/端末用フォトグッズ写真/④使える（小物類）/8.ブランケット.jpg",
-  "jigsaw-display": "images/端末用フォトグッズ写真/②飾れる/9.パズル.png",
-  "tote-bag": "images/端末用フォトグッズ写真/③バッグ類/1-1.トートバッグS.jpg",
-  "mini-shoulder-bag": "images/端末用フォトグッズ写真/③バッグ類/2.ミニショルダーバッグ.jpg",
-  "sacoche": "images/端末用フォトグッズ写真/③バッグ類/3.サコッシュ.png",
-  "slim-pouch": "images/2026:6:19写真追加分/③バッグ類/4.スリムポーチ.jpg",
-  "suitcase": "images/端末用フォトグッズ写真/③バッグ類/5.スーツケース.jpg",
-  "wallet-phone-case": "images/端末用フォトグッズ写真/④使える（小物類）/1.手帳型スマホケース.jpg",
-  "normal-phone-case": "images/端末用フォトグッズ写真/④使える（小物類）/2.ノーマルスマホケース.png",
-  "ipad-case": "images/端末用フォトグッズ写真/④使える（小物類）/3.iPadケース.png",
-  "coin-case": "images/端末用フォトグッズ写真/④使える（小物類）/4.コインケース.jpg",
-  "pass-case": "images/2026:6:19写真追加分/④日用雑貨/5.パスケース.jpg",
-  "mobile-battery": "images/端末用フォトグッズ写真/④使える（小物類）/6.モバイルバッテリー.png",
-  "cushion-goods": "images/端末用フォトグッズ写真/④使える（小物類）/7.クッション.jpg",
-  "blanket-goods": "images/端末用フォトグッズ写真/④使える（小物類）/8.ブランケット.jpg",
-  "jigsaw-goods": "images/端末用フォトグッズ写真/②飾れる/9.パズル.png",
-  "print-seal": "images/端末用フォトグッズ写真/④使える（小物類）/10.シール.jpg",
-  "can-badge": "images/端末用フォトグッズ写真/④使える（小物類）/11.缶バッジ.jpg",
-  "compact-mirror": "images/端末用フォトグッズ写真/④使える（小物類）/12.コンパクトミラー.jpg",
-  "stand-mirror": "images/端末用フォトグッズ写真/④使える（小物類）/13.スタンドミラー.png",
-  "mug": "images/端末用フォトグッズ写真/④使える（小物類）/14.マグカップ.jpg",
-  "glass": "images/端末用フォトグッズ写真/④使える（小物類）/15.グラス.png",
-  "diatomite-coaster": "images/端末用フォトグッズ写真/④使える（小物類）/16.コースター.png",
-  "mouse-pad": "images/端末用フォトグッズ写真/④使える（小物類）/17.マウスパッド.png",
-  "can": "images/2026:6:19写真追加分/④日用雑貨/18.缶.jpg",
-  "line-fixed-a": "images/端末用フォトグッズ写真/⑤LINEスタンプ/1.言葉固定A.png",
-  "line-fixed-b": "images/端末用フォトグッズ写真/⑤LINEスタンプ/2.言葉固定B.png",
-  "line-choice": "images/端末用フォトグッズ写真/⑤LINEスタンプ/1.言葉固定A.png",
-  "line-comic-fixed": "images/端末用フォトグッズ写真/⑤LINEスタンプ/4.アメコミ風言葉固定.png",
-  "line-comic-choice": "images/端末用フォトグッズ写真/⑤LINEスタンプ/4.アメコミ風言葉固定.png",
-  "fd-normal-phone-case": "images/写真追加分/1.ノーマルスマホケース(FD).jpg",
-  "fd-wallet-phone-case": "images/端末用フォトグッズ写真/⑥Face Dots/2.手帳型スマホケース（FD）.jpg",
-  "fd-ipad-case": "images/写真追加分/3.iPad(FD).jpg",
-  "fd-coin-case": "images/端末用フォトグッズ写真/⑥Face Dots/4.コインケース（FD）.jpg",
-  "fd-pass-case": "images/写真追加分/5.パスケース(FD).jpg",
-  "fd-mobile-battery": "images/写真追加分/6.モバイルバッテリー(FD).jpg",
-  "fd-compact-mirror": "images/写真追加分/7.コンパクトミラー(FD).jpg",
-  "fd-stand-mirror": "images/写真追加分/8.スタンドミラー(FD).jpg"
+  "data-cd": "assets/img/img008.jpg",
+  "express-data-cd": "assets/img/img008.jpg",
+  "original-booklet": "assets/img/img009.jpg",
+  "photo-book-main": "assets/img/img010.jpg",
+  "canvas-board": "assets/img/img011.jpg",
+  "acrylic-stand": "assets/img/img012.jpg",
+  "tapestry": "assets/img/img013.png",
+  "square-mount": "assets/img/img014.jpg",
+  "multi-frame": "assets/img/img015.jpg",
+  "acrylic-clock": "assets/img/img016.jpg",
+  "cushion-display": "assets/img/img017.jpg",
+  "blanket-display": "assets/img/img018.jpg",
+  "jigsaw-display": "assets/img/img019.png",
+  "tote-bag": "assets/img/img020.jpg",
+  "mini-shoulder-bag": "assets/img/img021.jpg",
+  "sacoche": "assets/img/img022.png",
+  "slim-pouch": "assets/img/img023.jpg",
+  "suitcase": "assets/img/img024.jpg",
+  "wallet-phone-case": "assets/img/img025.jpg",
+  "normal-phone-case": "assets/img/img026.png",
+  "ipad-case": "assets/img/img027.png",
+  "coin-case": "assets/img/img028.jpg",
+  "pass-case": "assets/img/img029.jpg",
+  "mobile-battery": "assets/img/img030.png",
+  "cushion-goods": "assets/img/img017.jpg",
+  "blanket-goods": "assets/img/img018.jpg",
+  "jigsaw-goods": "assets/img/img019.png",
+  "print-seal": "assets/img/img031.jpg",
+  "can-badge": "assets/img/img032.jpg",
+  "compact-mirror": "assets/img/img033.jpg",
+  "stand-mirror": "assets/img/img034.png",
+  "mug": "assets/img/img035.jpg",
+  "glass": "assets/img/img036.png",
+  "diatomite-coaster": "assets/img/img037.png",
+  "mouse-pad": "assets/img/img038.png",
+  "can": "assets/img/img039.jpg",
+  "line-fixed-a": "assets/img/img040.png",
+  "line-fixed-b": "assets/img/img041.png",
+  "line-choice": "assets/img/img040.png",
+  "line-comic-fixed": "assets/img/img042.png",
+  "line-comic-choice": "assets/img/img042.png",
+  "fd-normal-phone-case": "assets/img/img043.jpg",
+  "fd-wallet-phone-case": "assets/img/img044.jpg",
+  "fd-ipad-case": "assets/img/img045.jpg",
+  "fd-coin-case": "assets/img/img046.jpg",
+  "fd-pass-case": "assets/img/img047.jpg",
+  "fd-mobile-battery": "assets/img/img048.jpg",
+  "fd-compact-mirror": "assets/img/img049.jpg",
+  "fd-stand-mirror": "assets/img/img050.jpg"
 };
 
 const productOptionImages = {
   "tote-bag": {
     size: {
-      "Sサイズ": "images/端末用フォトグッズ写真/③バッグ類/1-1.トートバッグS.jpg",
-      "Lサイズ": "images/端末用フォトグッズ写真/③バッグ類/1-2.トートバッグL.jpg"
+      "Sサイズ": "assets/img/img020.jpg",
+      "Lサイズ": "assets/img/img051.jpg"
     }
   }
 };
 
-const faceDotsDesignImage = "images/写真追加分/FD.jpg";
+const faceDotsDesignImage = "assets/img/img052.jpg";
 const productGalleries = {
   "tote-bag": [
-    "images/端末用フォトグッズ写真/③バッグ類/1-1.トートバッグS.jpg",
-    "images/端末用フォトグッズ写真/③バッグ類/1-2.トートバッグL.jpg"
+    "assets/img/img020.jpg",
+    "assets/img/img051.jpg"
   ],
   "ipad-case": [
     productImages["ipad-case"],
-    "images/2026:6:4写真追加分/④日用雑貨/3-1.iPadケース.jpg",
-    "images/2026:6:4写真追加分/④日用雑貨/3-2.iPadケース.jpg"
+    "assets/img/img053.jpg",
+    "assets/img/img054.jpg"
   ],
   "pass-case": [
     productImages["pass-case"],
-    "images/2026:6:4写真追加分/④日用雑貨/5-1.パスケース.jpg",
-    "images/2026:6:4写真追加分/④日用雑貨/5-2.パスケース.jpg"
+    "assets/img/img055.jpg",
+    "assets/img/img056.jpg"
   ],
   "can": [
     productImages["can"],
-    "images/端末用フォトグッズ写真/④使える（小物類）/18.缶.png"
+    "assets/img/img057.png"
   ],
   "fd-normal-phone-case": [productImages["fd-normal-phone-case"], faceDotsDesignImage],
   "fd-wallet-phone-case": [productImages["fd-wallet-phone-case"], faceDotsDesignImage],

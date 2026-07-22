@@ -10,7 +10,7 @@
   "orientation": "landscape",
   "icons": [
     {
-      "src": "images/icon.svg",
+      "src": "assets/img/img059.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
