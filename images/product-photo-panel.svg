@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#fbfaf7"/>
+  <rect x="110" y="70" width="580" height="390" rx="18" fill="#fff" stroke="#ddd6cc" stroke-width="10"/>
+  <rect x="145" y="105" width="510" height="250" rx="12" fill="#e8f0ed"/>
+  <circle cx="400" cy="222" r="88" fill="#b77f55"/>
+  <path d="M235 354c70-90 125-108 180-38 44-66 108-78 160 38" fill="#7c9a92"/>
+  <rect x="250" y="485" width="300" height="26" rx="13" fill="#ddd6cc"/>
+  <text x="400" y="545" text-anchor="middle" font-family="sans-serif" font-size="42" fill="#2f2d2a">Photo Panel</text>
+</svg>

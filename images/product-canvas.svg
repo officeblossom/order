@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#fbfaf7"/>
+  <rect x="145" y="80" width="510" height="360" rx="8" fill="#fff" stroke="#b77f55" stroke-width="16"/>
+  <path d="M175 410h450M175 370h450M175 330h450M175 290h450M175 250h450M175 210h450M175 170h450M175 130h450" stroke="#f1e8dd" stroke-width="4"/>
+  <circle cx="405" cy="230" r="92" fill="#c8a37d"/>
+  <path d="M270 408c62-82 111-102 164-40 42-60 104-78 156 40" fill="#7c9a92"/>
+  <text x="400" y="545" text-anchor="middle" font-family="sans-serif" font-size="44" fill="#2f2d2a">Canvas Print</text>
+</svg>

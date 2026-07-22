@@ -1,0 +1,19 @@
+{
+  "name": "ペット撮影会 注文受付",
+  "short_name": "撮影会注文",
+  "description": "ペット撮影会向けのオフライン対応注文受付アプリ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#f5eee6",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "images/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
