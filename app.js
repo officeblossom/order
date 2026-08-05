@@ -391,8 +391,12 @@ function normalizeSession(session) {
 }
 
 function normalizeOrder(order) {
+  const createdAt = order.createdAt || new Date().toISOString();
   return {
     ...order,
+    createdAt,
+    acceptedAt: order.acceptedAt || createdAt,
+    sessionVenueName: order.sessionVenueName || "会場未設定",
     customer: normalizeCustomer(order.customer || {})
   };
 }
@@ -1355,6 +1359,7 @@ function openOrderConfirm() {
 }
 
 async function saveOrder() {
+  const acceptedAt = new Date().toISOString();
   const customer = normalizeCustomer(state.customer);
   customer.name = customer.name.trim();
   customer.phone = customer.phone.trim();
@@ -1372,7 +1377,8 @@ async function saveOrder() {
     sessionDate: state.currentSession.date,
     photoGoodsDeliveryDate: state.currentSession.photoGoodsDeliveryDate,
     freePaperDeliveryDate: state.currentSession.freePaperDeliveryDate,
-    createdAt: new Date().toISOString(),
+    createdAt: acceptedAt,
+    acceptedAt,
     customer,
     items: state.cart.map((item) => ({ ...item, note: item.note || "", options: { ...item.options } })),
     deliveryLocation: state.deliveryLocation,
@@ -1859,7 +1865,9 @@ function createReceiptCanvas(order) {
   y += 64;
   ctx.font = "24px sans-serif";
   ctx.fillStyle = "#756b61";
-  ctx.fillText(`${formatDateTime(order.createdAt)} 発行`, width / 2, y);
+  ctx.fillText(`注文受付日時：${formatDateTime(getOrderAcceptedAt(order))}`, width / 2, y);
+  y += 38;
+  ctx.fillText(`開催店舗名：${getOrderVenueName(order)}`, width / 2, y);
 
   y += 72;
   ctx.textAlign = "left";
@@ -1947,7 +1955,7 @@ function createReceiptCanvas(order) {
 }
 
 function receiptFileName(order) {
-  return `${formatDateForFile(order.createdAt)}_${safeFileName(order.customer.name || "お客様")}_ご注文明細書.png`;
+  return `${formatDateForFile(getOrderAcceptedAt(order))}_${safeFileName(order.customer.name || "お客様")}_ご注文明細書.png`;
 }
 
 function buildReceiptRows(order) {
@@ -2247,6 +2255,14 @@ function getFreePaperDeliveryDate(value) {
   if (month <= 5) return `${year}-06-30`;
   if (month <= 8) return `${year}-09-30`;
   return `${year}-12-24`;
+}
+
+function getOrderAcceptedAt(order) {
+  return order.acceptedAt || order.createdAt;
+}
+
+function getOrderVenueName(order) {
+  return order.sessionVenueName || state.currentSession?.venueName || "会場未設定";
 }
 
 function getOrderPhotoGoodsDeliveryDate(order) {
