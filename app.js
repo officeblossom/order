@@ -1868,6 +1868,8 @@ function createReceiptCanvas(order) {
   ctx.fillText(`注文受付日時：${formatDateTime(getOrderAcceptedAt(order))}`, width / 2, y);
   y += 38;
   ctx.fillText(`開催店舗名：${getOrderVenueName(order)}`, width / 2, y);
+  y += 38;
+  ctx.fillText(`発送先：${getOrderDeliveryLocation(order)}`, width / 2, y);
 
   y += 72;
   ctx.textAlign = "left";
