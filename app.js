@@ -1763,13 +1763,13 @@ async function cancelSavedOrder(orderId) {
 function exportOrdersCsv() {
   const orders = getSessionOrders();
   const rows = [
-    ["注文日時", "撮影会名", "会場名", "開催日", "氏名", "電話番号", "ペット情報", "ペットの名前", "犬種・猫種など", "誕生日", "注文商品一覧", "受け取り場所", "フリーペーパー掲載用写真", "送料", "合計金額", "決済方法"],
+    ["氏名", "注文日時", "撮影会名", "会場名", "開催日", "電話番号", "ペット情報", "ペットの名前", "犬種・猫種など", "誕生日", "注文商品一覧", "受け取り場所", "フリーペーパー掲載用写真", "送料", "合計金額", "決済方法"],
     ...orders.map((order) => [
+      order.customer.name,
       formatDateTime(order.createdAt),
       order.sessionName,
       order.sessionVenueName || "会場未設定",
       order.sessionDate,
-      order.customer.name,
       order.customer.phone,
       formatPetsForDisplay(order.customer),
       formatPetNames(order.customer),
