@@ -2016,12 +2016,13 @@ function drawReceiptSectionTitle(ctx, title, x, y) {
 }
 
 function downloadCanvasPng(canvas, filename) {
-  const link = document.createElement("a");
-  link.href = canvas.toDataURL("image/png");
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+  const dataUrl = canvas.toDataURL("image/png");
+  if (window.webkit?.messageHandlers?.downloadPng) {
+    window.webkit.messageHandlers.downloadPng.postMessage({ filename, dataUrl });
+    return;
+  }
+  const blob = dataUrlToBlob(dataUrl);
+  downloadBlob(blob, filename, "image/png", dataUrl);
 }
 
 function downloadCsv(rows, filename) {
@@ -2032,14 +2033,42 @@ function downloadCsv(rows, filename) {
     return;
   }
   const blob = new Blob([bom + csv], { type: "text/csv;charset=utf-8" });
+  downloadBlob(blob, filename, "text/csv;charset=utf-8");
+}
+
+function downloadBlob(blob, filename, type, fallbackHref = null) {
+  const file = new File([blob], filename, { type });
+  if (navigator.canShare?.({ files: [file] })) {
+    navigator.share({ files: [file] }).catch(() => {
+      triggerLinkDownload(blob, filename, fallbackHref);
+    });
+    return;
+  }
+  triggerLinkDownload(blob, filename, fallbackHref);
+}
+
+function triggerLinkDownload(blob, filename, fallbackHref = null) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = url;
+  link.href = url || fallbackHref;
   link.download = filename;
   document.body.appendChild(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(url);
+  window.setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+}
+
+function dataUrlToBlob(dataUrl) {
+  const [header, data] = dataUrl.split(",");
+  const contentType = header.match(/data:(.*?);/)?.[1] || "application/octet-stream";
+  const binary = atob(data);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  return new Blob([bytes], { type: contentType });
 }
 
 function csvCell(value) {
