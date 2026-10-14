@@ -1,8 +1,8 @@
-const CACHE_NAME = "pet-photo-order-app-v48";
+const CACHE_NAME = "pet-photo-order-app-v49";
 const APP_FILES = [
   "./",
   "./index.html",
-  "./style.css?v=36",
+  "./style.css?v=37",
   "./app.js?v=41",
   "./manifest.json",
   "./fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf",
