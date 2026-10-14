@@ -55,18 +55,18 @@
 }
 
 :root {
-  --bg: #edf5f9;
+  --bg: #fbfaf7;
   --surface: #ffffff;
-  --surface-soft: #e2eff6;
-  --surface-muted: #e4edf2;
+  --surface-soft: #f6f0e8;
+  --surface-muted: #eeeeeb;
   --text: #2f2d2a;
   --muted: #6d6862;
-  --line: #cddbe3;
+  --line: #ddd6cc;
   --primary: #b77f55;
   --primary-strong: #8f5b37;
   --accent: #7c9a92;
   --danger: #b45345;
-  --shadow: 0 10px 28px rgba(38, 62, 80, 0.08);
+  --shadow: 0 10px 28px rgba(65, 49, 35, 0.12);
   --radius: 8px;
   --tap: 56px;
 }
@@ -129,7 +129,7 @@ button:disabled {
   min-height: 76px;
   padding: 12px clamp(18px, 4vw, 40px);
   border-bottom: 1px solid var(--line);
-  background: rgba(237, 245, 249, 0.96);
+  background: rgba(251, 250, 247, 0.96);
   backdrop-filter: blur(10px);
 }
 
@@ -175,7 +175,7 @@ button:disabled {
 .hero-main {
   padding: clamp(26px, 5vw, 58px);
   border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #e1eff7 100%);
+  background: linear-gradient(135deg, #fff 0%, #f7efe5 100%);
   box-shadow: var(--shadow);
 }
 
@@ -233,7 +233,7 @@ h3 {
 .home-photo {
   min-height: 420px;
   border-radius: 12px;
-  background: url("assets/img/hero.jpg") center / cover no-repeat, #deedf5;
+  background: url("assets/img/hero.jpg") center / cover no-repeat, #f2ece4;
   box-shadow: var(--shadow);
 }
 
